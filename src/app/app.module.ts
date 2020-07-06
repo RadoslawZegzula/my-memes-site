@@ -1,22 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {AppRoutes} from './routes'
+import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MemesComponent } from './memes/memes.component';
 import { OneMeme } from './memes/oneMeme';
+import { MemeDetailsComponent } from './memes/meme-details/memeDetails';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     MemesComponent,
-    OneMeme
+    OneMeme,
+    MemeDetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot(AppRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

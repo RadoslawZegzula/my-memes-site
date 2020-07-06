@@ -1,3 +1,10 @@
-<p>
-  memes works!
-</p>
+
+  <div class ="row">
+    
+    <div *ngFor="let oneMeme of arrayOfMemes" class ="col-md-5">
+        <hr/>   
+        <h3>Title: {{arrayOfMemes.name}}</h3>      
+        <one-meme [oneMeme] = "oneMeme" ></one-meme>
+    </div>
+</div>
+

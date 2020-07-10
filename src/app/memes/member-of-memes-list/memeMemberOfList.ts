@@ -1,4 +1,5 @@
 import { Component, OnInit,Input} from '@angular/core';
+import { ToastrService } from 'src/app/common/toastrService';
 
 @Component({
   selector: 'meme-member-of-list',
@@ -8,8 +9,9 @@ import { Component, OnInit,Input} from '@angular/core';
     <h3 [routerLink]="['/memes', meme.id]">: {{meme.title}}</h3>
     <img [routerLink]="['/memes', meme.id]" src="./assets/img/img1.jpg"/>
     <div>
-        <button>Likes</button>
-        <button>Update</button>
+        <button (click)="handleClickedLike()">Like</button>
+        <button (click)="handleClickedShare()">Share</button>
+        <button (click)="handleClickedDownload()">Download</button>
     </div>
     <button>Show comments</button>
   </div>
@@ -20,9 +22,23 @@ import { Component, OnInit,Input} from '@angular/core';
 export class MemeMemberOfList implements OnInit {
   @Input() meme:any
 
-  constructor() { }
+  constructor(private toastr:ToastrService) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  handleClickedLike()
+  {
+    this.toastr.success("You clicked like")
+  }
+
+  handleClickedShare()
+  {
+    this.toastr.success("You clicked share")
+  }
+
+  handleClickedDownload()
+  {
+    this.toastr.success("You clicked download")
   }
 
 }

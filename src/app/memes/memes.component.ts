@@ -11,11 +11,13 @@ export class MemesComponent implements OnInit {
     {
       id : 1,
       name : "MemeNr1",
+      title : "First",
       urlOfImage : "WWW"
     },
     {
       id : 2,
       name : "MemeNr2",
+      title : "Second",
       urlOfImage : "WWW"
     },
   ]

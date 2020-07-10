@@ -1,30 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { MemeService } from './shared/meme.service'
 
 @Component({
   selector: 'app-memes',
   templateUrl: './memes.component.html',
   styleUrls: ['./memes.component.css']
 })
-export class MemesComponent implements OnInit {
-  arrayOfMemes = 
-  [
-    {
-      id : 1,
-      name : "MemeNr1",
-      title : "First",
-      urlOfImage : "WWW"
-    },
-    {
-      id : 2,
-      name : "MemeNr2",
-      title : "Second",
-      urlOfImage : "WWW"
-    },
-  ]
+export class MemesComponent implements OnInit 
+{
 
-  constructor() { }
+  arrayOfMemes:any[]
 
-  ngOnInit() {
+  constructor(private memeService:MemeService) { }
+
+  ngOnInit() 
+  {
+    this.arrayOfMemes = this.memeService.getMemes()
   }
 
 }

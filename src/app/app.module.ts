@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MemesComponent } from './memes/memes.component';
-import { OneMeme } from './memes/oneMeme';
+import { MemeMemberOfList } from './memes/memeMemberOfList';
 import { MemeDetailsComponent } from './memes/meme-details/memeDetails';
 
 @NgModule({
@@ -14,7 +14,7 @@ import { MemeDetailsComponent } from './memes/meme-details/memeDetails';
     AppComponent,
     NavbarComponent,
     MemesComponent,
-    OneMeme,
+    MemeMemberOfList,
     MemeDetailsComponent
   ],
   imports: [

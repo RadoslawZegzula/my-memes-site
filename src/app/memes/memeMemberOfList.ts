@@ -1,11 +1,12 @@
 import { Component, OnInit,Input} from '@angular/core';
 
 @Component({
-  selector: 'one-meme',
+  selector: 'meme-member-of-list',
   template: 
   `
   <div>
-    <img [routerLink]="['/memes', oneMeme.id]" src="./assets/img/img1.jpg"/>
+    <h3 [routerLink]="['/memes', meme.id]">: {{meme.title}}</h3>
+    <img [routerLink]="['/memes', meme.id]" src="./assets/img/img1.jpg"/>
     <div>
         <button>Likes</button>
         <button>Update</button>
@@ -16,8 +17,8 @@ import { Component, OnInit,Input} from '@angular/core';
   styles: [``]
 })
 
-export class OneMeme implements OnInit {
-  @Input() oneMeme:any
+export class MemeMemberOfList implements OnInit {
+  @Input() meme:any
 
   constructor() { }
 

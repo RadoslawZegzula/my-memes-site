@@ -1,10 +1,9 @@
 
   <div style="text-align:center" >
     
-    <div *ngFor="let oneMeme of arrayOfMemes" class ="col-md-5">
-        <hr/>   
-        <h3>Title: {{arrayOfMemes.name}}</h3>      
-        <one-meme [oneMeme] = "oneMeme" ></one-meme>
+    <div *ngFor="let meme of arrayOfMemes" class ="col-md-5">
+        <hr/>         
+        <meme-member-of-list [meme] = "meme" ></meme-member-of-list>
     </div>
 </div>
 

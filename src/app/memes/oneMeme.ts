@@ -5,7 +5,7 @@ import { Component, OnInit,Input} from '@angular/core';
   template: 
   `
   <div>
-    <img src="./assets/img/img1.jpg"/>
+    <img [routerLink]="['/memes', oneMeme.id]" src="./assets/img/img1.jpg"/>
     <div>
         <button>Likes</button>
         <button>Update</button>

@@ -11,6 +11,7 @@ import { MemeDetailsComponent } from './memes/meme-details/memeDetails';
 
 import { MemeService } from './memes/shared/meme.service';
 import { ToastrService } from './common/toastrService'
+import { MyPaginationComponent } from './memes/pagination/pagination.component'
 
 @NgModule(
   {
@@ -20,7 +21,8 @@ import { ToastrService } from './common/toastrService'
     NavbarComponent,
     MemesComponent,
     MemeMemberOfList,
-    MemeDetailsComponent
+    MemeDetailsComponent,
+    MyPaginationComponent
   ],
   imports: 
   [

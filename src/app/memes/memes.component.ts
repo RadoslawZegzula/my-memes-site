@@ -8,14 +8,19 @@ import { MemeService } from './shared/meme.service'
 })
 export class MemesComponent implements OnInit 
 {
-
-  arrayOfMemes:any[]
+  items = [];
+  pageOfItems: Array<any>;
 
   constructor(private memeService:MemeService) { }
 
   ngOnInit() 
   {
-    this.arrayOfMemes = this.memeService.getMemes()
+    this.items = this.memeService.getMemes()
+  }
+  
+  onChangePage(pageOfItems: Array<any>) 
+  {
+    this.pageOfItems = pageOfItems;
   }
 
 }

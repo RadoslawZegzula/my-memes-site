@@ -5,7 +5,7 @@ export class MemeService
 {
     getMeme(id: number): any 
     {
-      return arrayOfMemes.find(m => m.id = id)
+      return arrayOfMemes.find(m => m.id == id)
     }
 
     getMemes()

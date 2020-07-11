@@ -1,11 +1,9 @@
 
-<div class="card text-center m-3">
-  <h3 class="card-header">Angular 8 Pagination Example</h3>
-  <div class="card-body" *ngFor="let item of pageOfItems">
-      <hr/>         
+<div class="text-center">
+  <div *ngFor="let item of pageOfItems">    
       <meme-member-of-list [meme] = "item" ></meme-member-of-list>
   </div>
-  <div class="card-footer pb-0 pt-3">
+  <div>
       <my-pagination [items]="items" [pageSize]="3" (changePage)="onChangePage($event)"></my-pagination>
   </div>
 </div>

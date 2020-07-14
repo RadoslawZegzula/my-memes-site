@@ -11,7 +11,7 @@ export class MemesComponent implements OnInit
   items = [];
   pageOfItems: Array<any>;
 
-  constructor(private memeService:MemeService) { }
+  constructor(private memeService:MemeService) { this.items = this.memeService.getMemes()}
 
   ngOnInit() 
   {

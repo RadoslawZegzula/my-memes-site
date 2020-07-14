@@ -3,6 +3,11 @@ import { Injectable } from '@angular/core'
 @Injectable()
 export class MemeService
 {
+    addMeme(arg0: any) 
+    {
+      arrayOfMemes.push(arg0);
+    }
+
     getMeme(id: number): any 
     {
       return arrayOfMemes.find(m => m.id == id)

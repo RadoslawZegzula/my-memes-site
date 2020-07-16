@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { MemeService } from './shared/meme.service'
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-memes',
@@ -8,14 +9,17 @@ import { MemeService } from './shared/meme.service'
 })
 export class MemesComponent implements OnInit 
 {
-  items = [];
+  items:any;
   pageOfItems: Array<any>;
 
-  constructor(private memeService:MemeService) { this.items = this.memeService.getMemes()}
+  constructor(private memeService:MemeService, private route:ActivatedRoute ) 
+  { 
+
+  }
 
   ngOnInit() 
   {
-    this.items = this.memeService.getMemes()
+    this.items = this.route.snapshot.data['memes']   
   }
   
   onChangePage(pageOfItems: Array<any>) 

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core'
+import { Subject } from 'rxjs'
 
 @Injectable()
 export class MemeService
@@ -15,7 +16,10 @@ export class MemeService
 
     getMemes()
     {
-        return arrayOfMemes;
+      let subject  = new Subject()
+      setTimeout(()=>{ subject.next(arrayOfMemes); subject.complete() }, 200)
+      
+      return subject;
     }
 
 }

@@ -4,11 +4,12 @@ import { MemeDetailsComponent } from './memes/meme-details/memeDetails'
 import { Error404Component } from './errors/error404component'
 import { MemeRouteActivator } from './memes/meme-details/memeRouteActivator'
 import { MemeCreationComponent } from './memes/meme-adding-page/memeCreation.component'
+import { MemesListResolver } from './memes/memes-list-resolver'
 
 export const AppRoutes:Routes =
 [
     {path:`memes/new`, component: MemeCreationComponent, canDeactivate:['canDeactivateCreateMeme']},
-    {path:`memes`, component: MemesComponent},
+    {path:`memes`, component: MemesComponent, resolve: {memes:MemesListResolver} },
     {path:`memes/:id`, component: MemeDetailsComponent, canActivate: [MemeRouteActivator]},
     {path:`404`, component: Error404Component},
     {path:``, redirectTo:`/memes`, pathMatch:`full`}

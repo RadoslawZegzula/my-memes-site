@@ -15,6 +15,7 @@ import { MemeCreationComponent } from './memes/meme-adding-page/memeCreation.com
 import { MemeService } from './memes/shared/meme.service'
 import { ToastrService } from './common/toastrService'
 import { MemeRouteActivator } from './memes/meme-details/memeRouteActivator'
+import { MemesListResolver } from './memes/memes-list-resolver'
 
 
 @NgModule(
@@ -40,6 +41,7 @@ import { MemeRouteActivator } from './memes/meme-details/memeRouteActivator'
     MemeService, 
     ToastrService, 
     MemeRouteActivator,
+    MemesListResolver,
     {provide:'canDeactivateCreateMeme', useValue:checkDirtyState}
   ],
   bootstrap: [AppComponent]

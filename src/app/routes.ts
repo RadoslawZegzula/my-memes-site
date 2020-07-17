@@ -12,5 +12,6 @@ export const AppRoutes:Routes =
     {path:`memes`, component: MemesComponent, resolve: {memes:MemesListResolver} },
     {path:`memes/:id`, component: MemeDetailsComponent, canActivate: [MemeRouteActivator]},
     {path:`404`, component: Error404Component},
-    {path:``, redirectTo:`/memes`, pathMatch:`full`}
+    {path:``, redirectTo:`/memes`, pathMatch:`full`},
+    {path:`user`, loadChildren:'./user/user.module#UserModule'}
 ]

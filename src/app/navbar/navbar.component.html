@@ -8,16 +8,19 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li>
-          <a [routerLink]="['/memes']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">All memes</a>
+          <a [routerLink]="['memes']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">All memes</a>
         </li>
         <li>
-          <a [routerLink]="['/memes/new']" routerLinkActive="active">Add meme</a>
+          <a [routerLink]="['memes/new']" routerLinkActive="active">Add meme</a>
         </li>
         <li>
-          <a [routerLink]="['/memes']" >Login</a>
+          <a [routerLink]="['memes']">Login</a>
         </li>
         <li>
-          <a [routerLink]="['/memes']" >Register</a>
+          <a [routerLink]="['memes']">Register</a>
+        </li>
+        <li>
+          <a [routerLink]="['user/profile']">Hey user</a>
         </li>
       </ul>
     </div>

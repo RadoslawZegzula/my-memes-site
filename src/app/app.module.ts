@@ -2,20 +2,23 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { AppRoutes } from './routes'
 import { RouterModule } from '@angular/router'
-
 import { AppComponent } from './app.component'
+
+import 
+{
+  MemesComponent,
+  MemeMemberOfList,
+  MemeCreationComponent,
+  MemeService,
+  MemesListResolver,
+  MemeRouteActivator,
+  MemeDetailsComponent
+} from './memes/index'
+
 import { NavbarComponent } from './navbar/navbar.component'
-import { MemesComponent } from './memes/memes.component'
-import { MemeMemberOfList } from './memes/member-of-memes-list/memeMemberOfList'
-import { MemeDetailsComponent } from './memes/meme-details/memeDetails'
 import { MyPaginationComponent } from './memes/pagination/pagination.component'
 import { Error404Component } from './errors/error404component'
-import { MemeCreationComponent } from './memes/meme-adding-page/memeCreation.component'
-
-import { MemeService } from './memes/shared/meme.service'
 import { ToastrService } from './common/toastrService'
-import { MemeRouteActivator } from './memes/meme-details/memeRouteActivator'
-import { MemesListResolver } from './memes/memes-list-resolver'
 
 
 @NgModule(

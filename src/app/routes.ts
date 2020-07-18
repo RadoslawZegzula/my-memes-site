@@ -1,10 +1,14 @@
 import { Routes } from '@angular/router'
-import { MemesComponent } from './memes/memes.component'
-import { MemeDetailsComponent } from './memes/meme-details/memeDetails'
 import { Error404Component } from './errors/error404component'
-import { MemeRouteActivator } from './memes/meme-details/memeRouteActivator'
-import { MemeCreationComponent } from './memes/meme-adding-page/memeCreation.component'
-import { MemesListResolver } from './memes/memes-list-resolver'
+
+import 
+{
+  MemesComponent,
+  MemeCreationComponent,
+  MemesListResolver,
+  MemeRouteActivator,
+  MemeDetailsComponent
+} from './memes/index'
 
 export const AppRoutes:Routes =
 [

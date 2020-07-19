@@ -1,5 +1,6 @@
 import { Component, OnInit,Input} from '@angular/core';
 import { ToastrService } from 'src/app/common/toastrService';
+import { IMeme } from '../shared/meme.model';
 
 @Component({
   selector: 'meme-member-of-list',
@@ -27,7 +28,7 @@ import { ToastrService } from 'src/app/common/toastrService';
 })
 
 export class MemeMemberOfList implements OnInit {
-  @Input() meme:any
+  @Input() meme:IMeme
 
   constructor(private toastr:ToastrService) { }
 

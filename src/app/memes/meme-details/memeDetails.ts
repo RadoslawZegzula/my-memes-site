@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { MemeService } from '../shared/meme.service'
+import { IMeme } from '../shared';
 
 @Component({
   selector: 'meme-details',
@@ -15,7 +16,7 @@ import { MemeService } from '../shared/meme.service'
 
 export class MemeDetailsComponent implements OnInit 
 {
-  meme:any
+  meme:IMeme
 
   constructor(private memeService:MemeService, private route:ActivatedRoute) { }
 

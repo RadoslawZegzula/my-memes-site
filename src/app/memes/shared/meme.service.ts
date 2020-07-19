@@ -1,22 +1,23 @@
 import { Injectable } from '@angular/core'
-import { Subject } from 'rxjs'
+import { Subject, Observable } from 'rxjs'
+import { IMeme } from './meme.model';
 
 @Injectable()
 export class MemeService
 {
-    addMeme(arg0: any) 
+    addMeme(arg0:IMeme) 
     {
       arrayOfMemes.push(arg0);
     }
 
-    getMeme(id: number): any 
+    getMeme(id: number):IMeme
     {
       return arrayOfMemes.find(m => m.id == id)
     }
 
-    getMemes()
+    getMemes():Observable<IMeme[]>
     {
-      let subject  = new Subject()
+      let subject  = new Subject<IMeme[]>()
       setTimeout(()=>{ subject.next(arrayOfMemes); subject.complete() }, 200)
       
       return subject;
@@ -24,7 +25,7 @@ export class MemeService
 
 }
 
-const arrayOfMemes = 
+const arrayOfMemes:IMeme[] = 
   [
     {
       id : 1,

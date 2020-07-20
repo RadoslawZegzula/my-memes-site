@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { IMeme } from '../shared/meme.model';
 
 import paginate = require('jw-paginate');
 
@@ -25,7 +26,7 @@ import paginate = require('jw-paginate');
 })
 
 export class MyPaginationComponent implements OnInit, OnChanges {
-  @Input() items: Array<any>;
+  @Input() items: IMeme[];
   @Output() changePage = new EventEmitter<any>(true);
   @Input() initialPage = 1;
   @Input() pageSize = 3;

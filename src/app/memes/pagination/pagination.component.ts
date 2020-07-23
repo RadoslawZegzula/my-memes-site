@@ -3,8 +3,8 @@ import { IMeme } from '../shared/meme.model';
 
 import paginate = require('jw-paginate');
 
-@Component({
-  //moduleId: module.id,
+@Component
+({
   selector: 'my-pagination',
   template: `<ul *ngIf="pager.pages && pager.pages.length" class="pagination">
   <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item first-item">
@@ -25,7 +25,8 @@ import paginate = require('jw-paginate');
 </ul>`
 })
 
-export class MyPaginationComponent implements OnInit, OnChanges {
+export class MyPaginationComponent implements OnInit, OnChanges 
+{
   @Input() items: IMeme[];
   @Output() changePage = new EventEmitter<any>(true);
   @Input() initialPage = 1;
@@ -34,28 +35,25 @@ export class MyPaginationComponent implements OnInit, OnChanges {
 
   pager: any = {};
 
-  ngOnInit() {
-    // set page if items array isn't empty
+  ngOnInit() 
+  {
     if (this.items && this.items.length) {
       this.setPage(this.initialPage);
     }
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    // reset page if items array has changed
+  ngOnChanges(changes: SimpleChanges) 
+  {
     if (changes.items.currentValue !== changes.items.previousValue) {
       this.setPage(this.initialPage);
     }
   }
 
   private setPage(page: number) {
-    // get new pager object for specified page
     this.pager = paginate(this.items.length, page, this.pageSize, this.maxPages);
 
-    // get new page of items from items array
     var pageOfItems = this.items.slice(this.pager.startIndex, this.pager.endIndex + 1);
 
-    // call change page function in parent component
     this.changePage.emit(pageOfItems);
   }
 }

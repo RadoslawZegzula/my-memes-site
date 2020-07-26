@@ -19,7 +19,7 @@ import { NavbarComponent } from './navbar/navbar.component'
 import { MyPaginationComponent } from './memes/pagination/pagination.component'
 import { Error404Component } from './errors/error404component'
 import { ToastrService } from './common/toastrService'
-
+import { AuthService } from './user/auth.service' 
 
 @NgModule(
   {
@@ -45,6 +45,7 @@ import { ToastrService } from './common/toastrService'
     ToastrService, 
     MemeRouteActivator,
     MemesListResolver,
+    AuthService,
     {provide:'canDeactivateCreateMeme', useValue:checkDirtyState}
   ],
   bootstrap: [AppComponent]

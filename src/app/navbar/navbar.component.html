@@ -14,13 +14,13 @@
           <a [routerLink]="['memes/new']" routerLinkActive="active">Add meme</a>
         </li>
         <li>
-          <a [routerLink]="['user/login']">Login</a>
+          <a *ngIf="!auth.isAuthenticated()" [routerLink]="['user/login']">Login</a>
         </li>
         <li>
-          <a [routerLink]="['user/register']">Register</a>
+          <a *ngIf="!auth.isAuthenticated()" [routerLink]="['user/register']">Register</a>
         </li>
         <li>
-          <a [routerLink]="['user/profile']">Hey user</a>
+          <a *ngIf="auth.isAuthenticated()" [routerLink]="['user/profile']"> Welcome {{auth.currentUser.firstName}} </a>
         </li>
       </ul>
     </div>

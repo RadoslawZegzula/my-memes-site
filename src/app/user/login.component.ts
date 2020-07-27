@@ -1,4 +1,6 @@
 import { Component} from '@angular/core'
+import { Router } from '@angular/router'
+import { AuthService } from './auth.service'
 
 @Component
 ({
@@ -9,8 +11,19 @@ export class LoginComponent
   userName
   password
   
+  constructor(private authService:AuthService, private router:Router)
+  {
+    
+  }
+
   login(formValues)
   {
-    console.log(formValues)
+    this.authService.loginUser(formValues.userName, formValues.password)
+    this.router.navigate(['memes'])
+  }
+
+  cancel()
+  {
+    this.router.navigate(['memes'])
   }
 }

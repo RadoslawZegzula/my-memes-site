@@ -22,4 +22,10 @@ export class AuthService
         return !!this.currentUser;
     }
 
+    updateCurrentUser(firstName: any, lastName: any) 
+    {
+      this.currentUser.firstName = firstName
+      this.currentUser.lastName = lastName
+    }
+
 }

@@ -2,7 +2,8 @@ import { Component } from '@angular/core'
 import { Router } from '@angular/router'
 import { MemeService } from '../shared/meme.service'
 
-@Component({
+@Component
+({
   selector: 'meme-details',
   template: 
   `
@@ -27,14 +28,12 @@ export class MemeCreationComponent
   addMeme()
   {
     this.memeService.addMeme
-    (
-    {
+    ({
       id : 155,
       name : "Created meme",
       title : "CreatedMeme",
       urlOfImage : "WWW"
-    }
-    );
+    });
   }
 
   cancel()

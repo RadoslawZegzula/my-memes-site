@@ -5,9 +5,11 @@ import { IMeme } from './meme.model';
 @Injectable()
 export class MemeService
 {
-    addMeme(arg0:IMeme) 
+    addMeme(meme:IMeme) 
     {
-      arrayOfMemes.push(arg0);
+      meme.id = 999;
+      meme.session = []
+      arrayOfMemes.push(meme);
     }
 
     getMeme(id: number):IMeme

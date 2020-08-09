@@ -1,0 +1,29 @@
+
+<h1>New Meme</h1>
+<hr>
+<div class="col-md-6">
+  <form #newMemeForm="ngForm" (ngSubmit)="saveMeme(newMemeForm.value)" autocomplete="off" novalidate>
+    <div class="form-group" [ngClass]="{'error': newMemeForm.controls.name?.invalid && newMemeForm.controls.name?.touched}">
+      <label for="memeName">Meme Name:</label>
+      <em *ngIf="newMemeForm.controls.name?.invalid && (newMemeForm.controls.name?.touched)">Required</em>
+      <input (ngModel)="newMeme.name" name="name" required id="name" type="text" class="form-control" placeholder="Name of your Meme..." />
+    </div>
+
+    <div class="form-group" [ngClass]="{'error': newMemeForm.controls.title?.invalid && newMemeForm.controls.title?.touched}">
+      <label for="memeTitle">Meme Title:</label>
+      <em *ngIf="newMemeForm.controls.title?.invalid && (newMemeForm.controls.title?.touched)">Required</em>
+      <input (ngModel)="newMeme.title" name="title" required id="title" type="text" class="form-control" placeholder="Title of your Meme..." />
+    </div>
+   
+    <div class="form-group" [ngClass]="{'error': newMemeForm.controls.urlOfImage?.invalid && newMemeForm.controls.urlOfImage?.touched}">
+      <label for="urlOfImage">Image url:</label>
+      <em *ngIf="newMemeForm.controls.urlOfImage?.invalid && newMemeForm.controls.urlOfImage?.touched && newMemeForm.controls.urlOfImage?.errors.required">Required</em>
+      <em *ngIf="newMemeForm.controls.urlOfImage?.invalid && newMemeForm.controls.urlOfImage?.touched  && newMemeForm.controls.urlOfImage?.errors.pattern">Must be a png or jpg url</em>
+      <input (ngModel)="newMeme.urlOfImage" name="urlOfImage" required pattern=".*\/.*.(png|jpg)" id="urlOfImage" type="text" class="form-control" placeholder="url of image..." />
+      <img [src]="newMemeForm.controls.urlOfImage.value" *ngIf="newMemeForm.controls.urlOfImage?.valid" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="button" [disabled]="newMemeForm.invalid" class="btn btn-default" (click)="cancel()">Cancel</button>
+  </form>
+</div>

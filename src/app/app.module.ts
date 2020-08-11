@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core'
 import { AppRoutes } from './routes'
 import { RouterModule } from '@angular/router'
 import { AppComponent } from './app.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import 
 {
@@ -37,6 +38,8 @@ import { AuthService } from './user/auth.service'
   imports: 
   [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(AppRoutes)
   ],
   providers: 
@@ -46,7 +49,7 @@ import { AuthService } from './user/auth.service'
     MemeRouteActivator,
     MemesListResolver,
     AuthService,
-    {provide:'canDeactivateCreateMeme', useValue:checkDirtyState}
+    { provide:'canDeactivateCreateMeme', useValue:checkDirtyState }
   ],
   bootstrap: [AppComponent]
 })
